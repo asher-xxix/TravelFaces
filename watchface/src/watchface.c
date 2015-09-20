@@ -191,16 +191,22 @@ static void window_load(Window *window) {
 
 
     // Create time TextLayer
-    s_time_layer = text_layer_create(GRect(0, 10, 144, 50));
-    //text_layer_set_background_color(s_time_layer, GColorClear);
+    // s_time_layer = text_layer_create(GRect(0, 10, 144, 50));
+    // //text_layer_set_background_color(s_time_layer, GColorClear);
     s_time_font = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_SAN_FRANCISCO_42));
-    text_layer_set_font(s_time_layer, s_time_font);
-    text_layer_set_text_alignment(s_status_text_layer, GTextAlignmentCenter);
-    text_layer_set_text(s_status_text_layer, "Waiting");
-    layer_add_child(window_layer, text_layer_get_layer(s_status_text_layer));
+    // text_layer_set_font(s_time_layer, s_time_font);
+    // text_layer_set_text_alignment(s_status_text_layer, GTextAlignmentCenter);
+    // text_layer_set_text(s_status_text_layer, "Waiting");
+    // layer_add_child(window_layer, text_layer_get_layer(s_status_text_layer));
     //text_layer_set_text_color(s_time_layer, GColorBlack);
     //text_layer_set_text(s_time_layer, "Nyanpassu!");
     //text_layer_set_text(s_time_layer, "00.00");
+
+    s_status_text_layer = text_layer_create(GRect(0, 70, 144, 30));
+    text_layer_set_font(s_status_text_layer, fonts_get_system_font(FONT_KEY_GOTHIC_18_BOLD));
+    text_layer_set_text_alignment(s_status_text_layer, GTextAlignmentCenter);
+    text_layer_set_text(s_status_text_layer, "Waiting");
+    layer_add_child(window_layer, text_layer_get_layer(s_status_text_layer));
 
 
     load_image();
@@ -211,7 +217,8 @@ static void window_load(Window *window) {
     text_layer_set_text_color(s_time_layer, GColorWhite);
 
     // Create GFont
-
+    text_layer_set_font(s_time_layer, s_time_font);
+    text_layer_set_text_alignment(s_time_layer, GTextAlignmentCenter);
 
     // Apply to time TextLayer
     //text_layer_set_font(s_time_layer, s_time_font);
@@ -433,7 +440,7 @@ static void init() {
     // Register with TickTimerService
     tick_timer_service_subscribe(MINUTE_UNIT, tick_handler);
 
-    window_stack_push(s_window, true);
+    window_stack_push(s_window, false);
     // app_message_register_inbox_received(in_received_handler);
     //app_message_open(512, 512);    //Large input and output buffer sizes
 
