@@ -1,14 +1,14 @@
 #include <pebble.h>
 //#define LOCATION 0
-#include "netdownload.h"
+//#include "netdownload.h"
 #include "png.h"
 #include "file_receiver.h"
 // #ifdef PBL_PLATFORM_APLITE
 // #include "png.h"
 // #endif
 
-#define KEY_DATA 4
-#define STRING_KEY_DATA 7
+// #define KEY_DATA 4
+// #define STRING_KEY_DATA 7
 
 #define COMMAND_KEY 0
 #define COLOR_KEY 1
@@ -433,7 +433,7 @@ static void init() {
     // Register with TickTimerService
     tick_timer_service_subscribe(MINUTE_UNIT, tick_handler);
 
-    window_stack_push(s_window, false);
+    window_stack_push(s_window, true);
     // app_message_register_inbox_received(in_received_handler);
     //app_message_open(512, 512);    //Large input and output buffer sizes
 
