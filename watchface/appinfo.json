@@ -1,0 +1,47 @@
+{
+    "appKeys": {
+        "KEY_DATA": 4
+    },
+    "capabilities": [
+        "location"
+    ],
+  "uuid": "7df4d7c0-2e51-4bb9-bd47-07fddcb39638",
+  "shortName": "watchface",
+  "longName": "watchface",
+  "companyName": "MakeAwesomeHappen",
+  "versionLabel": "1.0",
+  "sdkVersion": "3",
+  "targetPlatforms": ["aplite", "basalt"],
+  "watchapp": {
+    "watchface": false
+  },
+  "appKeys": {
+    "dummy": 0
+  },
+  "resources": {
+    "media": [
+        {
+            "type": "font",
+            "name": "SAN_FRANCISCO_42",
+            "file": "fonts/System-San-Francisco-Display-Bold.ttf",
+            "compatibility": "2.7"
+        },
+        {
+            "type": "font",
+            "name": "SAN_FRANCISCO_21",
+            "file": "fonts/System-San-Francisco-Display-Bold.ttf",
+            "compatibility": "2.7"
+        },
+        {
+            "type": "png",
+            "name": "IMAGE_NUM_1",
+            "file": "images/num_1.png"
+        },
+        {
+            "type": "png",
+            "name": "IMAGE_NUM_2",
+            "file": "images/num_2.png"
+        }
+    ]
+  }
+}
